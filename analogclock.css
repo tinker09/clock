@@ -1,0 +1,84 @@
+body {
+    display: flex; /* 子要素をフレックスボックスとして配置 */
+    justify-content: center; /* 子要素を中央に配置（横方向） */
+    align-items: center; /* 子要素を中央に配置（縦方向） */
+    height: 100vh; /* ビューポートの高さを100%に設定 */
+    margin: 0; /* 余白をなくす */
+    background-color:gray; /* 背景色を設定 */
+}
+
+.clock {
+    width: 300px; /* 時計の幅を300pxに設定 */
+    height: 300px; /* 時計の高さを300pxに設定 */
+    border: 3px solid black; /* 時計の枠を黒い線で囲む */
+    border-radius: 50%; /* 時計を円形にする */
+    position: relative; /* 内部の子要素の位置を相対的に配置 */
+    padding: 20px; /* 時計の内側に余白を追加 */
+    box-sizing: border-box; /* paddingとborderを含むサイズ計算方法を指定 */
+}
+
+.clock_face {
+    width: 100%; /* 盤面の幅を親要素に合わせる */
+    height: 100%; /* 盤面の高さを親要素に合わせる */
+    position: relative; /* 針の配置用に相対位置を設定 */
+    transform: translateY(-3px); /* 少し上にシフトして見栄えを調整 */
+}
+
+.hand {
+    width: 50%; /* 針の長さを親要素の50%に設定 */
+    height: 6px; /* 針の太さを6pxに設定 */
+    background-color: black; /* 針の色を黒に設定 */
+    position: absolute; /* 針を絶対位置で配置 */
+    top: 50%; /* 針を上下中央に配置 */
+    transform-origin: 100%; /* 回転の中心を針の端に設定 */
+    transform: rotate(90deg); /* 針を初期位置として90度回転 */
+    transform: translateY(-50%); /* 針を中央に正確に配置 */
+    transition: all 0.05s; /* 針の移動にスムーズなアニメーションを適用 */
+    transition-timing-function: ease-in-out; /* 針の動きを滑らかにする */
+}
+
+.hour_hand {
+    height: 6px; /* 時針の太さを設定 */
+    width: 35%; /* 時針の長さを親要素の35%に設定 */
+    background-color: blue;
+    transform-origin: 120% 50%; /* 時計の針の中心からの距離設定 */
+}
+
+.minute_hand {
+    height: 4px; /* 分針の太さ */
+    background-color: yellow; /* 分針の色 */
+   transform-origin: 100% 100%; /* 回転の基準点を中央に設定 */
+    width: 50%; /* 分針の長さ */
+    position: absolute;
+    transform: rotate(90deg) translateX(-50%); /* 針を中央に配置し、初期角度を調整 */
+}
+
+.second_hand {
+    height: 2px; /* 秒針の太さを2pxに設定 */
+    background-color: red; /* 秒針の色を赤に設定 */
+}
+
+.number {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.number1 { top: 13%; left: 75%; transform: translate(-50%, -50%); }
+.number2 { top: 30%; left: 90%; transform: translate(-50%, -50%); }
+.number3 { top: 50%; left: 95%; transform: translate(-50%, -50%); }
+.number4 { top: 75%; left: 90%; transform: translate(-50%, -50%); }
+.number5 { top: 92%; left: 75%; transform: translate(-50%, -50%); }
+.number6 { top: 97%; left: 50%; transform: translate(-50%, -50%); }
+.number7 { top: 90%; left: 25%; transform: translate(-50%, -50%); }
+.number8 { top: 73%; left: 7%; transform: translate(-50%, -50%); }
+.number9 { top: 50%; left: 5%; transform: translate(-50%, -50%); }
+.number10 { top: 30%; left: 10%; transform: translate(-50%, -50%); }
+.number11 { top: 11%; left: 25%; transform: translate(-50%, -50%); }
+.number12 { top: 5%; left: 50%; transform: translate(-50%, -50%); }
+
+/* その他のスタイルは以前と同じ */
